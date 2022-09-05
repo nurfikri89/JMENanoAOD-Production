@@ -1,0 +1,15 @@
+###/DoubleMuon/Run2022B-PromptReco-v1/MINIAOD
+/DoubleMuon/Run2022C-PromptReco-v1/MINIAOD
+#
+#
+#
+/Muon/Run2022C-PromptReco-v1/MINIAOD
+#
+#
+#
+###/JetHT/Run2022B-PromptReco-v1/MINIAOD
+/JetHT/Run2022C-PromptReco-v1/MINIAOD
+#
+#
+#
+/JetMET/Run2022C-PromptReco-v1/MINIAOD
