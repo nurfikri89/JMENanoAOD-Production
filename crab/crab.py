@@ -21,12 +21,12 @@ reqNamePrefix = "JMENanoRun3"
 #
 # Set version number (CHECK)
 #
-version = "v2p0"
+version = "v2p1"
 #
 # Change this PATH where the crab directories are stored
 # Example: config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects/'
 #
-crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_4/'
+crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_5/'
 #
 crab_config.JobType.pluginName = 'Analysis'
 

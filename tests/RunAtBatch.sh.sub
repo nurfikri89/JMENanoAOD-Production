@@ -14,6 +14,8 @@ arguments = $(SAMPLE)
 queue SAMPLE from ( 
 #Data22B_DoubleMuon
 Data22C_Muon
+Data22D_Muon
+Data22D_JetMET
 )
 
 +JobFlavour = "microcentury"
@@ -21,4 +23,5 @@ arguments = $(SAMPLE)
 queue SAMPLE from ( 
 MC22_122_TTTo2L2Nu
 MC22_122_DYJetsToLL
+MC22_122_QCD_Pt-15to7000_Flat
 )

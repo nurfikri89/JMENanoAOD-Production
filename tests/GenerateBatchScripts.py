@@ -8,7 +8,9 @@ import copy
 XROOTD="root://xrootd-cms.infn.it/"
 
 NEVENTS="100"
-# NEVENTS="200"
+# NEVENTS="250"
+# NEVENTS="500"
+# NEVENTS="1000"
 # NEVENTS="10000"
 # NEVENTS="-1"
 
@@ -16,10 +18,11 @@ nanoVersion  = "NanoAODv10"
 
 EOSUSER=""
 EOSUSER="root://eosuser.cern.ch/"
-EOSUSER+="/eos/user/n/nbinnorj/JMENano/Run3/"
+# EOSUSER+="/eos/user/n/nbinnorj/JMENano/Run3/v2/"
+EOSUSER+="/eos/user/n/nbinnorj/JMENano/Run3/v2p1/"
 
-CUSTOM_PRE   = "process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))\\n"
-CUSTOM_PRE   = CUSTOM_PRE+"process.MessageLogger.cerr.FwkReport.reportEvery = 10\\n"
+CUSTOM_PRE = "process.add_(cms.Service('InitRootHandlers', EnableIMT = cms.untracked.bool(False)))\\n"
+CUSTOM_PRE = CUSTOM_PRE+"process.MessageLogger.cerr.FwkReport.reportEvery = 10\\n"
 
 CUSTOM_DATA = CUSTOM_PRE+"from PhysicsTools.NanoAOD.custom_jme_cff import PrepJMECustomNanoAOD_Data; PrepJMECustomNanoAOD_Data(process)\\n"
 CUSTOM_MC = CUSTOM_PRE+"from PhysicsTools.NanoAOD.custom_jme_cff import PrepJMECustomNanoAOD_MC; PrepJMECustomNanoAOD_MC(process)\\n"
@@ -55,7 +58,25 @@ def main():
   sampleDict["Data22C_Muon"]["NANOAOD"] = "JMENano_Data22C_Muon.root"
   sampleDict["Data22C_Muon"]["CFGFILE"] = "JMENano_Data22C_Muon_cfg.py"
 
+  sampleDict["Data22D_Muon"] = copy.deepcopy(sampleDict["Data22B_DoubleMuon"])
+  sampleDict["Data22D_Muon"]["GT"]  = GTDict["Data22D"][nanoVersion]
+  sampleDict["Data22D_Muon"]["ERA"] = ERADict["Data22D"][nanoVersion]
+  sampleDict["Data22D_Muon"]["DAS"] = "/Muon/Run2022D-PromptReco-v1/MINIAOD"
+  sampleDict["Data22D_Muon"]["MINIAOD"] = [
+    XROOTD+"/store/data/Run2022D/Muon/MINIAOD/PromptReco-v1/000/357/706/00000/0c0f10ea-13a5-40ab-a045-258b631ec1f2.root"
+  ]
+  sampleDict["Data22D_Muon"]["NANOAOD"] = "JMENano_Data22D_Muon.root"
+  sampleDict["Data22D_Muon"]["CFGFILE"] = "JMENano_Data22D_Muon_cfg.py"
 
+  sampleDict["Data22D_JetMET"] = copy.deepcopy(sampleDict["Data22B_DoubleMuon"])
+  sampleDict["Data22D_JetMET"]["GT"]  = GTDict["Data22D"][nanoVersion]
+  sampleDict["Data22D_JetMET"]["ERA"] = ERADict["Data22D"][nanoVersion]
+  sampleDict["Data22D_JetMET"]["DAS"] = "/JetMET/Run2022D-PromptReco-v1/MINIAOD"
+  sampleDict["Data22D_JetMET"]["MINIAOD"] = [
+    XROOTD+"/store/data/Run2022D/JetMET/MINIAOD/PromptReco-v1/000/357/613/00000/bec4b892-91ed-481d-a341-ed10b01d17a7.root"
+  ]
+  sampleDict["Data22D_JetMET"]["NANOAOD"] = "JMENano_Data22D_JetMET.root"
+  sampleDict["Data22D_JetMET"]["CFGFILE"] = "JMENano_Data22D_JetMET_cfg.py"
   ######################################################
   #
   # MC TTTo2L2Nu
@@ -81,16 +102,31 @@ def main():
   sampleDict["MC22_122_DYJetsToLL"] = copy.deepcopy(sampleDict["MC22_122_TTTo2L2Nu"])
   sampleDict["MC22_122_DYJetsToLL"]["DAS"] = "/DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8/Run3Winter22MiniAOD-122X_mcRun3_2021_realistic_v9_ext2-v2/MINIAODSIM"
   sampleDict["MC22_122_DYJetsToLL"]["MINIAOD"] = [
-    XROOTD+"/store/mc/Run3Winter22MiniAOD/DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8/MINIAODSIM/122X_mcRun3_2021_realistic_v9_ext2-v2/40000/72dd806e-eef1-4387-b08c-03836e178303.root"
+    XROOTD+"/store/mc/Run3Winter22MiniAOD/DYJetsToLL_M-50_TuneCP5_13p6TeV-madgraphMLM-pythia8/MINIAODSIM/122X_mcRun3_2021_realistic_v9_ext2-v2/40001/5e306acf-9696-4364-89e3-b56c6a64fa55.root"
   ]
   sampleDict["MC22_122_DYJetsToLL"]["NANOAOD"] = "JMENano_MC22_122_DYJetsToLL.root"
   sampleDict["MC22_122_DYJetsToLL"]["CFGFILE"] = "JMENano_MC22_122_DYJetsToLL_cfg.py"
+
+  ######################################################
+  #
+  # MC QCD_Pt-15to7000_Flat
+  #
+  ######################################################
+  sampleDict["MC22_122_QCD_Pt-15to7000_Flat"] = copy.deepcopy(sampleDict["MC22_122_TTTo2L2Nu"])
+  sampleDict["MC22_122_QCD_Pt-15to7000_Flat"]["DAS"] = "/QCD_Pt-15to7000_TuneCP5_Flat_13p6TeV_pythia8/Run3Winter22MiniAOD-122X_mcRun3_2021_realistic_v9-v2/MINIAODSIM"
+  sampleDict["MC22_122_QCD_Pt-15to7000_Flat"]["MINIAOD"] = [
+    XROOTD+"/store/mc/Run3Winter22MiniAOD/QCD_Pt-15to7000_TuneCP5_Flat_13p6TeV_pythia8/MINIAODSIM/122X_mcRun3_2021_realistic_v9-v2/40000/d1e21ec5-4f08-48a6-a471-26b94bcb1a25.root"
+  ]
+  sampleDict["MC22_122_QCD_Pt-15to7000_Flat"]["NANOAOD"] = "JMENano_MC22_122_QCD_Pt-15to7000_Flat.root"
+  sampleDict["MC22_122_QCD_Pt-15to7000_Flat"]["CFGFILE"] = "JMENano_MC22_122_QCD_Pt-15to7000_Flat_cfg.py"
 
   for key in sampleDict:
     #
     # Ignore Data22B at the moment. Nano doesn't run. probably it due its 123X GT. maybe wait for 12_4 rereco
     #
     if "Data22B_DoubleMuon" in key: continue
+    # if not("JetMET" in key or "QCD_Pt" in key): continue #TEMP;
+    print(key)
     CreateBashScript(sampleDict,key)
 
 def GetGTandEraDicts():
@@ -100,11 +136,13 @@ def GetGTandEraDicts():
   GT = MyDict()
   # GT["Data22B"]["NanoAODv10"]  = "123X_dataRun3_Prompt_v12"
   GT["Data22C"]["NanoAODv10"]  = "124X_dataRun3_Prompt_v4"
-  GT["MC22_122"]["NanoAODv10"] = "122X_mcRun3_2021_realistic_v9"
+  GT["Data22D"]["NanoAODv10"]  = "124X_dataRun3_Prompt_v4"
+  GT["MC22_122"]["NanoAODv10"] = "124X_mcRun3_2022_realistic_v11"
 
   ERA = MyDict()
   ERA["Data22B"]["NanoAODv10"]  = "Run3"
   ERA["Data22C"]["NanoAODv10"]  = "Run3"
+  ERA["Data22D"]["NanoAODv10"]  = "Run3"
   ERA["MC22_122"]["NanoAODv10"] = "Run3,run3_nanoAOD_122"
 
   return GT, ERA
