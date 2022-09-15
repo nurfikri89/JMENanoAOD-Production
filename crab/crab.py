@@ -21,12 +21,12 @@ reqNamePrefix = "JMENanoRun3"
 #
 # Set version number (CHECK)
 #
-version = "v1p1"
+version = "v2p0"
 #
 # Change this PATH where the crab directories are stored
 # Example: config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects/'
 #
-crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_3/'
+crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_4/'
 #
 crab_config.JobType.pluginName = 'Analysis'
 
@@ -79,8 +79,8 @@ from CRABAPI.RawCommand import crabCommand
 runTime_data = 900
 runTime_mc   = 900
 
-fileSplit_data = 2
-fileSplit_mc   = 2
+fileSplit_data = 1
+fileSplit_mc   = 1
 
 #
 # Read in txt file with list of samples

@@ -35,10 +35,14 @@ def TrimSecondaryNameForMC(dataset):
 
 def TrimSecondaryNameForData(dataset):
   name = dataset.split('/')[2]
-  name = name.replace("-v1","")# 
-  name = name.replace("-v2","")# 
-  name = name.replace("-v3","")#
-  name = name.replace("-v4","")# Remove any version indication.
+  #
+  # Note: For PromptReco, we do need the version as different versions 
+  # means different run number ranges.
+  #
+  # name = name.replace("-v1","")# 
+  # name = name.replace("-v2","")# 
+  # name = name.replace("-v3","")#
+  # name = name.replace("-v4","")# Remove any version indication.
   return name
 
 def IsSampleData(dataset):

@@ -4,6 +4,9 @@
 #
 #
 /Muon/Run2022C-PromptReco-v1/MINIAOD
+/Muon/Run2022D-PromptReco-v1/MINIAOD 
+/Muon/Run2022D-PromptReco-v2/MINIAOD 
+/Muon/Run2022D-PromptReco-v3/MINIAOD 
 #
 #
 #
@@ -13,3 +16,13 @@
 #
 #
 /JetMET/Run2022C-PromptReco-v1/MINIAOD
+/JetMET/Run2022D-PromptReco-v1/MINIAOD
+/JetMET/Run2022D-PromptReco-v2/MINIAOD
+/JetMET/Run2022D-PromptReco-v3/MINIAOD
+#
+#
+#
+/ZeroBias/Run2022C-PromptReco-v1/MINIAOD
+/ZeroBias/Run2022D-PromptReco-v1/MINIAOD
+/ZeroBias/Run2022D-PromptReco-v2/MINIAOD
+/ZeroBias/Run2022D-PromptReco-v3/MINIAOD
