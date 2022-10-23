@@ -1,11 +1,9 @@
 /DoubleMuon/Run2022C-PromptReco-v1/MINIAOD
 /Muon/Run2022C-PromptReco-v1/MINIAOD
-
 /JetHT/Run2022C-PromptReco-v1/MINIAOD
 /JetMET/Run2022C-PromptReco-v1/MINIAOD
 /EGamma/Run2022C-PromptReco-v1/MINIAOD
 /ZeroBias/Run2022C-PromptReco-v1/MINIAOD
-
 /EphemeralZeroBias0/Run2022C-PromptReco-v1/MINIAOD
 /EphemeralZeroBias1/Run2022C-PromptReco-v1/MINIAOD
 /EphemeralZeroBias2/Run2022C-PromptReco-v1/MINIAOD

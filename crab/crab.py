@@ -26,7 +26,7 @@ version = "v2p1"
 # Change this PATH where the crab directories are stored
 # Example: config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects/'
 #
-crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_5/'
+crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_2/'
 #
 crab_config.JobType.pluginName = 'Analysis'
 
@@ -57,6 +57,7 @@ whitelist_sites=[
 'T2_FR_*',
 'T2_CH_*',
 'T2_IT_*',
+'T2_IN_*',
 'T2_ES_*',
 'T2_HU_*',
 'T2_BE_*',
