@@ -2,7 +2,7 @@
 # First run: 359045
 # Last run: 359814. (As of 08/10/2022, 19:40 CERN time)
 #
-/Muon/Run2022E-PromptReco-v1/MINIAOD
+#/Muon/Run2022E-PromptReco-v1/MINIAOD
 #
 # First run: 359037
 # Last run: 359814 (As of 08/10/2022, 19:40 CERN time)

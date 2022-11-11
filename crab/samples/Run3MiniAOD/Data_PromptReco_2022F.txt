@@ -1,0 +1,22 @@
+#
+# First run: 360335
+# Last run: 360927 (As of 27/10/2022, 16:30 CERN time)
+#
+/Muon/Run2022F-PromptReco-v1/MINIAOD
+#
+# First run: 360381
+# Last run: 360927 (As of 27/10/2022, 16:30 CERN time)
+#
+/JetMET/Run2022F-PromptReco-v1/MINIAOD
+#
+# First run: 360389
+# Last run: 360927 (As of 27/10/2022, 16:30 CERN time)
+#
+/EGamma/Run2022F-PromptReco-v1/MINIAOD
+#
+# First run: 360335
+# Last run: 360927 (As of 27/10/2022, 16:30 CERN time)
+#
+/ZeroBias/Run2022F-PromptReco-v1/MINIAOD
+#
+#
