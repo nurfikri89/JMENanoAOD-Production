@@ -26,7 +26,7 @@ version = "v2p1"
 # Change this PATH where the crab directories are stored
 # Example: config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects/'
 #
-crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_2/'
+crab_config.General.workArea = '/afs/cern.ch/work/n/nbinnorj/private/crab_projects_6/'
 #
 crab_config.JobType.pluginName = 'Analysis'
 
@@ -118,6 +118,14 @@ for i, dataset in enumerate(samplelist):
     crab_config.JobType.psetName  = 'configs/%s/JMENano_Data22_cfg.py'%(version)
     crab_config.JobType.maxJobRuntimeMin = runTime_data
     crab_config.Data.unitsPerJob = fileSplit_data
+    # if "Run2022E" in dataset and "EGamma" in dataset:
+    #   crab_config.Data.lumiMask = './tempJSON/runsLeft_Run2022E_EGamma.json' 
+    # if "Run2022E" in dataset and "JetMET" in dataset:
+    #   crab_config.Data.lumiMask = './tempJSON/runsLeft_Run2022E_JetMET.json' 
+    # if "Run2022E" in dataset and "Muon" in dataset:
+    #   crab_config.Data.lumiMask = './tempJSON/runsLeft_Run2022E_Muon.json' 
+    # if "Run2022E" in dataset and "ZeroBias" in dataset:
+    #   crab_config.Data.lumiMask = './tempJSON/runsLeft_Run2022E_ZeroBias.json' 
     #
     # Have to make unique requestName.
     # Sample naming convention is a bit dumb and makes this more difficult.
@@ -145,6 +153,7 @@ for i, dataset in enumerate(samplelist):
   print(crab_config.Data.splitting)
   print(crab_config.Data.unitsPerJob)
   print(crab_config.JobType.maxJobRuntimeMin)
+  # print(crab_config.Data.lumiMask)
   crabCommand('submit', config = crab_config)
   print("")
 
